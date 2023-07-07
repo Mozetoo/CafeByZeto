@@ -1,0 +1,43 @@
+
+
+{% include "header.html" %}
+<header class="masthead" style="background-image: url('{{cafe.img_url}}')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>{{cafe.name}}</h1>
+            <h2 class="subheading">{{cafe.location}}</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <h2>Price for a Coffee</h2>
+          <p>
+            {{cafe.coffee_price}}
+          </p>
+          </div>
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <h2>Amenties</h2>
+          <p>
+            Wifi: {% if cafe.has_wifi == 1 %}Yes{% else %}No{% endif %} <br>
+            Sockets: {% if cafe.has_sockets == 1 %}Yes{% else %}No{% endif %} <br>
+            Calls Allowed: {% if cafe.can_take_calls == 1 %}Yes{% else %}No{% endif %} <br>
+            Toilet: {% if cafe.has_toilet == 1 %}Yes{% else %}No{% endif %} <br>
+            Seats: {{cafe.seats}} seats <br>
+            Google Map : <a href="{{cafe.map_url}}" >Map Link</a> <br>
+          </p>
+          </div>
+      </div>
+    </div>
+  </article>
+
+{% include "footer.html" %}
